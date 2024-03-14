@@ -1,3 +1,14 @@
 Caminho poetry C:\Users\rodrigo.goncalves\AppData\Roaming\Python\Python311\Scripts\poetry
 
 C:\Users\rodrigo.goncalves\.local\bin
+
+>>> importar(resources/existe/arquivo.xlsx)
+        {"sucesso": "arquivo importado"}
+
+        >>> importar(caminho/existe/arquivo.docx)
+        {"erro": "formato não suportado"}
+
+        
+
+        >>> importar(caminho/nao/arquivo.docx)
+        {"erro": "arquivo não encontrado"}

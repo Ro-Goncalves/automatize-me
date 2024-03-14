@@ -13,16 +13,9 @@ def importar(caminhoArquivo: str) -> dict[str, str]:
         Um dicionário contendo sucesso/erro e uma mensagem descritiva
 
     Examples:
-        >>>importar(caminho/existe/arquivo.xlsx)
-        {"sucesso": "arquivo importado"}
-
-        >>>importar(caminho/existe/arquivo.docx)
-        {"erro": "formato não suportado"}
-
-        >>>importar()
-        {"erro": "arquivo não informado"}
-
-        >>>importar(caminho/nao/arquivo.docx)
-        {"erro": "arquivo não encontrado"}
+        >>> importar("")
+        {'erro': 'arquivo não informado'}
     """
+    if not caminhoArquivo:
+        return {'erro': 'arquivo não informado'}
    

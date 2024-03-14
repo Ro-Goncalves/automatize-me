@@ -26,10 +26,10 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra_css:
-  - stylesheets/extra.css # Inclui um CSS no doc
+  - stylesheets/extra.css
 
 watch:
-  - .
+  - automatize_me
 
 plugins:
 - macros

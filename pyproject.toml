@@ -6,8 +6,8 @@ authors = ["Rodrigo Gonçalves <ro.go.calves@gmail.com>"]
 readme = "README.md"
 packages = [{include = "automatize_me"}]
 
-[tool.poetry.scripts]
-automatize-me = "automatize_me.cli:app"
+# [tool.poetry.scripts]
+# automatize-me = "automatize_me.cli:app"
 
 [tool.poetry.dependencies]
 python = "^3.11"
