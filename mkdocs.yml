@@ -1,0 +1,39 @@
+site_name: Automatize-Me
+repo_url: https://github.com/Ro-Goncalves/automatize-me
+repo_name: ro-goncalves/automatize-me
+edit_uri: tree/master/docs
+
+nav:
+  - Home: index.md  
+
+theme:  
+  name: material 
+  language: pt-BR
+  logo: assets/logo.png
+  favicon: assets/logo.png
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - pymdownx.tasklist
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css # Inclui um CSS no doc
+
+watch:
+  - .
+
+plugins:
+- macros
+-  mkdocstrings:
+    handlers:
+      python:
+        paths: [automatize_me]
