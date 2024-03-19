@@ -5,7 +5,7 @@ import os, shutil
 
 DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 
-def importar(caminhoArquivo: str) -> dict[str, list[str]]:
+def importar(caminhoArquivo: str) -> dict[str, str]:
     """
     Importa a planilha
     
@@ -17,16 +17,16 @@ def importar(caminhoArquivo: str) -> dict[str, list[str]]:
 
     Examples:
         >>> importar("")
-        {'erro': ['arquivo não informado']}
+        {'status': 'erro', 'mensagem': 'arquivo não informado'}
 
-        >>> importar('caminho/existe/arquivo.docx')
-        {'erro': ['formato não suportado, formato suportado .xlsx']}
+        >>> importar('tests/resources/arquivos-teste/arquivo.docx')
+        {'status': 'erro', 'mensagem': 'formato não suportado, formato suportado .xlsx'}
 
         >>> importar('caminho/nao/arquivo.xlsx')
-        {'erro': ['arquivo não encontrado']}
+        {'status': 'erro', 'mensagem': 'arquivo não encontrado'}
 
         >>> importar('tests/resources/arquivos-teste/arquivo.xlsx')
-        {'sucesso': ['arquivo importado']}
+        {'status': 'sucesso', 'mensagem': 'arquivo importado'}
     """
     if not caminhoArquivo:
         return {'status': 'erro', 'mensagem': 'arquivo não informado'}
@@ -42,10 +42,3 @@ def importar(caminhoArquivo: str) -> dict[str, list[str]]:
    
     shutil.copy(caminhoArquivo, os.path.join(DIR_PATH, 'resources', 'arquivos'))
     return  {'status': 'sucesso', 'mensagem': 'arquivo importado'}
-
-
-def descrever() -> dict[str, list[dict[str, list[str]]]]:
-    """
-    Recupera o nome das planilhas contidas no arquivo, o nome dos campos da planilha
-    """
-   

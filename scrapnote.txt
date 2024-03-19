@@ -1,0 +1,3 @@
+Caminho poetry C:\Users\rodrigo.goncalves\AppData\Roaming\Python\Python311\Scripts\poetry
+
+C:\Users\rodrigo.goncalves\.local\bin
