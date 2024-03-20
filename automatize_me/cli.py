@@ -4,22 +4,19 @@ from typer import Argument, Typer
 
 from automatize_me.ler_xlsx import importar as _importar_xlsx
 
-console = Console()
+console = Console(color_system="truecolor")
 app = Typer()
 
 @app.command()
 def importar_xlsx(    
     arquivo : str = Argument('caminho', help= "Arquivo que será usado no processamento"),
 ):
-    tabela = Table()
-
-    status, mensagem = _importar_xlsx(arquivo).values()
-
-    tabela.add_column(status)
-    tabela.add_row(mensagem)
-
-    console.print(f'{status} - {mensagem}\n')
-    console.print(tabela)
+    try:
+        _importar_xlsx(arquivo)
+        console.print("Arquivo importado com sucesso")
+    except Exception as e:
+        console.print(e)
+   
 
 @app.command()
 def escala(
