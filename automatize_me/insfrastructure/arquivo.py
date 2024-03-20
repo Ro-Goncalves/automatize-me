@@ -3,6 +3,8 @@ Módulo responsável por gerenciar os arquivos.
 """
 import os, shutil
 
+DIR_PATH = os.path.dirname(os.path.realpath(__file__))
+
 def _validar_caminho_vazio(caminhoArquivo: str):
     """
     Verifica se o caminho informado é vazio ou None. Caso positivo, lança uma exceção.
@@ -98,9 +100,9 @@ def importar_arquivo(caminhoArquivo: str):
         None
     
     Raises:
-        ValueError: Caso o caminho seja nulo ou esteja fora da pasta "upload".
+        ValueError: Caso encontre algum erro ao mover o arquivo.
     """
     try:
-        shutil.copy(caminhoArquivo, os.path.join('resources', 'arquivos'))        
+        shutil.copy(caminhoArquivo, os.path.join('automatize_me', 'resources', 'arquivos'))        
     except Exception as e:
-        raise ValueError("Erro ao mover o arquivo.") from e
+        raise ValueError("Erro ao mover o arquivo: " + str(e))
