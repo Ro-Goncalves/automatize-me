@@ -3,7 +3,8 @@ Módulo responsável por gerenciar os arquivos.
 """
 import os, shutil
 
-DIR_PATH = os.path.dirname(os.path.realpath(__file__))
+#TODO Deve ser uma variável global
+RESOURCES = os.path.join('automatize_me', 'resources', 'arquivos')
 
 def _validar_caminho_vazio(caminhoArquivo: str):
     """
@@ -103,6 +104,7 @@ def importar_arquivo(caminhoArquivo: str):
         ValueError: Caso encontre algum erro ao mover o arquivo.
     """
     try:
-        shutil.copy(caminhoArquivo, os.path.join('automatize_me', 'resources', 'arquivos'))        
+        shutil.copy(caminhoArquivo, RESOURCES)        
     except Exception as e:
         raise ValueError("Erro ao mover o arquivo: " + str(e))
+    
