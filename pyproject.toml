@@ -7,12 +7,14 @@ readme = "README.md"
 packages = [{include = "automatize_me"}]
 
 [tool.poetry.scripts]
-automatize-me = "automatize_me.cli:app"
+automatize-me = "automatize_me.application.cli:app"
 
 [tool.poetry.dependencies]
 python = "^3.11"
 typer = "^0.9.0"
 rich = "^13.7.1"
+pandas = "^2.2.1"
+openpyxl = "^3.1.2"
 
 
 [tool.poetry.group.dev.dependencies]
