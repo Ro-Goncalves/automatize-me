@@ -6,11 +6,11 @@ import pandas as pd
 from pandas import DataFrame
 
 from ..infrastructure.gerenciamento_arquivo import importar_arquivo, validar_planilha
+from ..infrastructure.variaveis import CAMINHO_ARQUIVOS
 
-RESOURCES = os.path.join('automatize_me', 'resources', 'arquivos')
 
 def _ler_planilha(nomeArquivo: str) -> DataFrame:
-    return pd.read_excel(os.path.join(RESOURCES, f'{nomeArquivo}.xlsx'), sheet_name=None)
+    return pd.read_excel(os.path.join(CAMINHO_ARQUIVOS, f'{nomeArquivo}.xlsx'), sheet_name=None)
 
 def importar_planilha(caminhoArquivo: str) -> dict[str, str]:
     """
